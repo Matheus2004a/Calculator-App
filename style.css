@@ -7,27 +7,36 @@
     font-family: 'Space Mono', monospace;
 }
 
-
 :root{
     /* Color primary */
     --strong-cyan: hsl(172, 67%, 45%);
     /* Colors neutral */
     --very-dark-cyan: hsl(183, 100%, 15%);
     --dark-grayish-cyan: hsl(186, 14%, 43%);
-    --dark-grayish-cyan: hsl(184, 14%, 56%);
+    --dark-grayish-cyan-brightness: hsl(184, 14%, 56%);
     --light-grayish-cyan: hsl(185, 41%, 84%);
     --light-gray-h-cyan: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
 }
 
-header{
-    color: var(--very-dark-cyan);
+header,.description,.section-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
     font-weight: 700;
 }
 
 header,main{
     display: grid;
     justify-content: center;
+}
+
+header{
+    color: var(--very-dark-cyan);
+    background-color: var(--light-grayish-cyan);
+    padding: 2rem;
+}
+
+main{
+    background-color: var(--white);
+    border-radius: 20px 20px 0 0;
 }
 
 a{
@@ -41,16 +50,21 @@ fieldset{
 fieldset img{
     position: absolute;
     left: 15px;
-    top: 7px;
+    top: 15px;
 }
 
 fieldset,input,button{
     border: none;
 }
 
+fieldset,section{
+    margin: 1rem 0;
+}
+
 .description{
     color: var(--dark-grayish-cyan);
-    font-weight: 700;
+    font-size: 0.8rem;
+    margin: 5px 0;
 }
 
 input,button{
@@ -59,18 +73,19 @@ input,button{
 }
 
 input{
+    width: 100%;
     padding: 5px;
     background-color: var(--light-gray-h-cyan);
 }
 
 .section-tips-percentage button{
+    font-size: 1rem;
     background-color: var(--very-dark-cyan);
 }
 
 .section-tips-percentage button:nth-child(6){
     background-color: var(--light-gray-h-cyan);
     color: var(--very-dark-cyan);
-    font-weight: 700;
 }
 
 .container-buttons-tips-percentage{
@@ -92,7 +107,7 @@ button:hover{
     display: grid;
     background-color: var(--very-dark-cyan);
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 .section-data-person h5{
@@ -104,13 +119,33 @@ button:hover{
 }
 
 .section-data-person button{
-    font-weight: 700;
     color: var(--very-dark-cyan);
     background-color: var(--strong-cyan);
 }
 
 .section-data-person .rows-data{
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.7rem 0;
+}
+
+.section-data-person .rows-data p{
+    font-size: 0.8rem;
+    color: var(--dark-grayish-cyan-brightness);
+}
+
+input, .section-data-person span{
+    font-size: 1.5rem;
+}
+
+.section-data-person button{
+    font-size: 1rem;
+    margin: 1rem 0 0;
+}
+
+.section-data-person span{
+    color: var(--strong-cyan);
 }
 
 header, .section-data-person button{
@@ -119,4 +154,8 @@ header, .section-data-person button{
 
 footer{
     text-align: center;
+}
+
+footer a{
+    color: var(--dark-grayish-cyan-brightness);
 }
