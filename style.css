@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+
+:root{
+    /* Color primary */
+    --strong-cyan: hsl(172, 67%, 45%);
+    /* Colors neutral */
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --dark-grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --light-gray-h-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+header{
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+}
+
+header,main{
+    display: grid;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+fieldset{
+    position: relative;
+}
+
+fieldset img{
+    position: absolute;
+    left: 15px;
+    top: 7px;
+}
+
+fieldset,input,button{
+    border: none;
+}
+
+.description{
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+}
+
+input,button{
+    border-radius: 3px;
+    outline: none;
+}
+
+input{
+    padding: 5px;
+    background-color: var(--light-gray-h-cyan);
+}
+
+.section-tips-percentage button{
+    background-color: var(--very-dark-cyan);
+}
+
+.section-tips-percentage button:nth-child(6){
+    background-color: var(--light-gray-h-cyan);
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+}
+
+.container-buttons-tips-percentage{
+    display: grid;
+    grid-template-columns: repeat(2, 10fr);
+    gap: 0.7rem;
+}
+
+button{
+    padding: 5px 1rem;
+    color: var(--white);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.section-data-person{
+    display: grid;
+    background-color: var(--very-dark-cyan);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.section-data-person h5{
+    color: var(--white);
+}
+
+.section-data-person p{
+    color: var(--strong-cyan);
+}
+
+.section-data-person button{
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+}
+
+.section-data-person .rows-data{
+    display: grid;
+}
+
+header, .section-data-person button{
+    text-transform: uppercase;
+}
+
+footer{
+    text-align: center;
+}
