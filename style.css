@@ -19,7 +19,7 @@
     --white: hsl(0, 0%, 100%);
 }
 
-header,.description,.section-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
+header,.description,input,.section-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
     font-weight: 700;
 }
 
@@ -74,8 +74,9 @@ input,button{
 
 input{
     width: 100%;
-    padding: 5px;
+    padding: 5px 5px 5px 2rem;
     background-color: var(--light-gray-h-cyan);
+    color: var(--very-dark-cyan);
 }
 
 .section-tips-percentage button{
@@ -97,10 +98,13 @@ input{
 button{
     padding: 5px 1rem;
     color: var(--white);
+    transition: all 0.5s;
 }
 
 button:hover{
     cursor: pointer;
+    background-color: var(--strong-cyan);
+    opacity: 0.5;
 }
 
 .section-data-person{
