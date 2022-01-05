@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -15,7 +15,7 @@
   <main>
     <fieldset>
       <legend class="description">Bill</legend>
-      <input type="number" name="" id="">
+      <input type="number" id="">
       <figure>
         <img src="./images/icon-dollar.svg" alt="icon-dollar">
       </figure>
@@ -29,7 +29,7 @@
         <button type="submit">15%</button>
         <button type="submit">25%</button>
         <button type="submit">50%</button>
-        <button type="submit">Custom</button>
+        <input contenteditable="true"  class="btn-custom" value="Custom"></input>
       </div>
     </section>
 
@@ -38,7 +38,7 @@
       <figure>
         <img src="./images/icon-person.svg" alt="icon-person">
       </figure>
-      <input type="number" name="" id="">
+      <input type="number" id="numbers-peoples">
     </fieldset>
 
     <section class="section-data-person">
@@ -47,23 +47,25 @@
           <h5>Tip Amount</h5>
           <p>/ person</p>
         </div>
-        <span>$4.27</span>
+        <span>$0.00</span>
       </div>
       <div class="rows-data">
         <div>
           <h5>Total</h5>
           <p>/ person</p>
         </div>
-        <span>$32.79</span>
+        <span>$0.00</span>
       </div>
-      <button type="reset">Reset</button>
+      <button type="reset" class="btn-reset-data-person">Reset</button>
     </section>
   </main>
 
   <footer>
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Matheus Aurélio</a>.
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a>
+      Coded by <a href="#">Matheus Aurélio.</a></p>
   </footer>
+
+  <script src="main.js"></script>
 </body>
 
 </html>

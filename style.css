@@ -32,9 +32,12 @@ header{
     color: var(--very-dark-cyan);
     background-color: var(--light-grayish-cyan);
     padding: 2rem;
+    height: 35vh;
 }
 
 main{
+    position: relative;
+    bottom: 2.5rem;
     background-color: var(--white);
     border-radius: 20px 20px 0 0;
 }
@@ -53,7 +56,7 @@ fieldset img{
     top: 15px;
 }
 
-fieldset,input,button{
+fieldset,button,input{
     border: none;
 }
 
@@ -79,8 +82,11 @@ input{
     color: var(--very-dark-cyan);
 }
 
-.section-tips-percentage button{
+.section-tips-percentage :is(button,input){
     font-size: 1rem;
+}
+
+.section-tips-percentage button{
     background-color: var(--very-dark-cyan);
 }
 
@@ -89,9 +95,13 @@ input{
     color: var(--very-dark-cyan);
 }
 
+.section-tips-percentage input:focus{
+    border: red !important;
+}
+
 .container-buttons-tips-percentage{
     display: grid;
-    grid-template-columns: repeat(2, 10fr);
+    grid-template-columns: repeat(2, 50%);
     gap: 0.7rem;
 }
 
