@@ -60,14 +60,24 @@ fieldset,button,input{
     border: none;
 }
 
+fieldset input.error{
+    border: 2px solid #ff0000;
+}
+
 fieldset,section{
     margin: 1rem 0;
 }
 
 .description{
+    display: flex;
+    gap: 7rem;
     color: var(--dark-grayish-cyan);
     font-size: 0.8rem;
     margin: 5px 0;
+}
+
+.description span{
+    color: #ff0000;
 }
 
 input,button{
@@ -80,6 +90,10 @@ input{
     padding: 5px 5px 5px 2rem;
     background-color: var(--light-gray-h-cyan);
     color: var(--very-dark-cyan);
+}
+
+#value-bill:focus,#btn-custom:focus{
+    border: 2px solid var(--strong-cyan);
 }
 
 .section-tips-percentage :is(button,input){
