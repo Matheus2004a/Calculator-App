@@ -2,7 +2,6 @@ const moneyPerson = document.querySelector("#value-bill")
 const numPeoples = document.querySelector("#numbers-peoples")
 const percentTip = document.querySelectorAll(".section-tips-percentage button")
 const percentTipCustom = document.querySelector("#btn-custom")
-
 const resetValues = document.querySelector(".btn-reset-data-person")
 resetValues.addEventListener("click", clearDataPerson)
 
@@ -10,21 +9,30 @@ let messageError = document.createElement("span")
 
 function calcBill() {
     let costTotalBill = moneyPerson.value / numPeoples.value
-    if (numPeoples.value == 0) {
-        messageError.innerHTML = "Can't be zero"
-        document.querySelectorAll(".description")[2].appendChild(messageError)
-        numPeoples.classList.add("error")
-    } else {
-        messageError.innerHTML = ""
-        dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
-        numPeoples.classList.remove("error")
-    }
-}
+    validityTips()
 
-for (const key in percentTip) {
-    percentTip[key].addEventListener("click", () => {
-        alert("Hello")
-    })
+    function validityTips() {
+        if (numPeoples.value <= 0) {
+            messageError.innerHTML = "Can't be zero or less"
+            document.querySelectorAll(".description")[2].appendChild(messageError)
+            numPeoples.classList.add("error")
+        } else {
+            messageError.innerHTML = ""
+            dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
+            numPeoples.classList.remove("error")
+            calcTip()
+        }
+        function calcTip() {
+            percentTip.forEach(valueTip => {
+                valueTip.addEventListener("click", () => {
+                    let resultTip = costTotalBill * valueTip.value / 100
+                    costTotalBill += resultTip
+                    dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
+                    dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
+                })
+            })
+        }
+    }
 }
 
 function clearDataPerson() {

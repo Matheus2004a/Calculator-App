@@ -70,7 +70,7 @@ fieldset,section{
 
 .description{
     display: flex;
-    gap: 7rem;
+    gap: 3rem;
     color: var(--dark-grayish-cyan);
     font-size: 0.8rem;
     margin: 5px 0;
@@ -92,7 +92,7 @@ input{
     color: var(--very-dark-cyan);
 }
 
-#value-bill:focus,#btn-custom:focus{
+#value-bill:focus, #btn-custom:focus{
     border: 2px solid var(--strong-cyan);
 }
 
@@ -104,18 +104,13 @@ input{
     background-color: var(--very-dark-cyan);
 }
 
-.section-tips-percentage button:nth-child(6){
-    background-color: var(--light-gray-h-cyan);
-    color: var(--very-dark-cyan);
-}
-
 .section-tips-percentage input:focus{
     border: red !important;
 }
 
 .container-buttons-tips-percentage{
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 48%);
     gap: 0.7rem;
 }
 
