@@ -19,7 +19,7 @@
     --white: hsl(0, 0%, 100%);
 }
 
-header,.description,input,.section-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
+header,fieldset,input,.container-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
     font-weight: 700;
 }
 
@@ -38,6 +38,7 @@ header{
 main{
     position: relative;
     bottom: 8rem;
+    padding: 0 2rem;
     background-color: var(--white);
     border-radius: 20px 20px 0 0;
 }
@@ -64,19 +65,23 @@ fieldset input.error{
     border: 2px solid #ff0000;
 }
 
-fieldset,section{
+fieldset,section,.container-tips-percentage p.error{
     margin: 1rem 0;
 }
 
-.description{
-    display: flex;
-    gap: 3rem;
+fieldset{
     color: var(--dark-grayish-cyan);
     font-size: 0.8rem;
-    margin: 5px 0;
+    margin: 2rem 0;
 }
 
-.description span{
+fieldset legend{
+    display: flex;
+    gap: 3rem;
+    margin: 0.8rem 0;
+}
+
+.container-tips-percentage p.error,fieldset span{
     color: #ff0000;
 }
 
@@ -96,15 +101,15 @@ input{
     border: 2px solid var(--strong-cyan);
 }
 
-.section-tips-percentage :is(button,input){
+.container-tips-percentage :is(button,input,p),.section-data-person button{
     font-size: 1rem;
 }
 
-.section-tips-percentage button{
+.container-tips-percentage button{
     background-color: var(--very-dark-cyan);
 }
 
-.section-tips-percentage input:focus{
+.container-tips-percentage input:focus{
     border: red !important;
 }
 
@@ -163,7 +168,6 @@ input, .section-data-person span{
 }
 
 .section-data-person button{
-    font-size: 1rem;
     margin: 1rem 0 0;
 }
 
@@ -181,4 +185,30 @@ footer{
 
 footer a{
     color: var(--dark-grayish-cyan-brightness);
+}
+
+/* Screen desktop */
+@media (min-width: 880px) {
+    body{
+        background-color: var(--light-grayish-cyan);
+    }
+
+    main{
+        width: 50vw;
+        display: flex;
+        margin: 0 auto;
+        gap: 9rem;
+        align-items: center;
+        box-shadow: 2px 2px 4px 5px var(--light-grayish-cyan);
+        border-radius: 20px;
+    }
+    
+    .container-buttons-tips-percentage{
+        grid-template-columns: repeat(3, 47%);
+    }
+
+    .section-data-person{
+        width: 40vw;
+        margin: 0;
+    }
 }

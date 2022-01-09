@@ -13,35 +13,37 @@
   <header>Splitter</header>
 
   <main>
-    <fieldset>
-      <legend class="description">Bill</legend>
-      <input type="number" id="value-bill">
-      <figure>
-        <img src="./images/icon-dollar.svg" alt="icon-dollar">
-      </figure>
-    </fieldset>
-
-    <section class="section-tips-percentage">
-      <p class="description">Select Tip %</p>
-      <div class="container-buttons-tips-percentage">
-        <button type="submit" value="5">5%</button>
-        <button type="submit" value="10">10%</button>
-        <button type="submit" value="15">15%</button>
-        <button type="submit" value="25">25%</button>
-        <button type="submit" value="50">50%</button>
-        <input contenteditable="true" id="btn-custom" value="Custom"></input>
-      </div>
-    </section>
-
-    <form>
+    <section class="section-enter-data-person">
       <fieldset>
-        <legend class="description">Number of People</legend>
+        <legend>Bill</legend>
+        <input type="number" id="value-bill">
         <figure>
-          <img src="./images/icon-person.svg" alt="icon-person">
+          <img src="./images/icon-dollar.svg" alt="icon-dollar">
         </figure>
-        <input type="number" id="numbers-peoples">
       </fieldset>
-    </form>
+  
+      <fieldset class="container-tips-percentage">
+        <legend>Select Tip %</legend>
+        <div class="container-buttons-tips-percentage">
+          <button type="submit" value="5">5%</button>
+          <button type="submit" value="10">10%</button>
+          <button type="submit" value="15">15%</button>
+          <button type="submit" value="25">25%</button>
+          <button type="submit" value="50">50%</button>
+          <input contenteditable="true" id="btn-custom" value="Custom" onblur="checkNumberTipCustom(this.value)">
+        </div>
+      </fieldset>
+  
+      <form>
+        <fieldset>
+          <legend>Number of People</legend>
+          <input type="number" id="numbers-peoples">
+          <figure>
+            <img src="./images/icon-person.svg" alt="icon-person">
+          </figure>
+        </fieldset>
+      </form>
+    </section>
 
     <section class="section-data-person">
       <div class="rows-data">
