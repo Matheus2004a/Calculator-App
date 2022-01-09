@@ -10,7 +10,11 @@
 </head>
 
 <body>
-  <header>Splitter</header>
+  <header>
+    <figure>
+      <img src="./images/logo.svg" alt="logo">
+    </figure>
+  </header>
 
   <main>
     <section class="section-enter-data-person">
@@ -30,7 +34,7 @@
           <button type="submit" value="15">15%</button>
           <button type="submit" value="25">25%</button>
           <button type="submit" value="50">50%</button>
-          <input contenteditable="true" id="btn-custom" value="Custom" onblur="checkNumberTipCustom(this.value)">
+          <input type="number" id="btn-custom" placeholder="Custom" value="" onblur="checkNumberTipCustom(this.value)">
         </div>
       </fieldset>
   
@@ -60,7 +64,7 @@
         </div>
         <span>$0.00</span>
       </div>
-      <button type="reset" class="btn-reset-data-person">Reset</button>
+      <button type="reset" class="btn-reset-data-person">RESET</button>
     </section>
   </main>
 
@@ -68,9 +72,6 @@
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a>
       Coded by <a href="#">Matheus Aurélio.</a></p>
   </footer>
-
-  <!-- Link de um repositório de desafios Front-End de empresas -->
-  <!-- https://github.com/felipefialho/frontend-challenges -->
 
   <script src="main.js"></script>
 </body>

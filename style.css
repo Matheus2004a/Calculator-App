@@ -19,6 +19,10 @@
     --white: hsl(0, 0%, 100%);
 }
 
+body{
+    background-color: var(--light-grayish-cyan);
+}
+
 header,fieldset,input,.container-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
     font-weight: 700;
 }
@@ -29,15 +33,11 @@ header,main{
 }
 
 header{
-    color: var(--very-dark-cyan);
-    background-color: var(--light-grayish-cyan);
-    padding: 2rem;
-    height: 35vh;
+    align-items: center;
+    height: 15vh;
 }
 
 main{
-    position: relative;
-    bottom: 8rem;
     padding: 0 2rem;
     background-color: var(--white);
     border-radius: 20px 20px 0 0;
@@ -63,10 +63,6 @@ fieldset,button,input{
 
 fieldset input.error{
     border: 2px solid #ff0000;
-}
-
-fieldset,section,.container-tips-percentage p.error{
-    margin: 1rem 0;
 }
 
 fieldset{
@@ -95,17 +91,23 @@ input{
     padding: 5px 5px 5px 2rem;
     background-color: var(--light-gray-h-cyan);
     color: var(--very-dark-cyan);
+    border-radius: 5px;
 }
 
-#value-bill:focus, #btn-custom:focus{
+input:not(#btn-custom){
+    text-align: right;
+}
+
+input:focus{
     border: 2px solid var(--strong-cyan);
 }
 
-.container-tips-percentage :is(button,input,p),.section-data-person button{
+.container-tips-percentage input,.section-data-person button{
     font-size: 1rem;
 }
 
 .container-tips-percentage button{
+    font-size: 1.2rem;
     background-color: var(--very-dark-cyan);
 }
 
@@ -133,8 +135,10 @@ button:hover{
 
 .section-data-person{
     display: grid;
+    gap: 1.5rem;
     background-color: var(--very-dark-cyan);
-    padding: 1rem;
+    margin: 0 0 3rem;
+    padding: 2rem 1.5rem;
     border-radius: 15px;
 }
 
@@ -142,7 +146,7 @@ button:hover{
     color: var(--white);
 }
 
-.section-data-person p{
+.section-data-person :is(p,span){
     color: var(--strong-cyan);
 }
 
@@ -154,8 +158,6 @@ button:hover{
 .section-data-person .rows-data{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0.7rem 0;
 }
 
 .section-data-person .rows-data p{
@@ -165,18 +167,6 @@ button:hover{
 
 input, .section-data-person span{
     font-size: 1.5rem;
-}
-
-.section-data-person button{
-    margin: 1rem 0 0;
-}
-
-.section-data-person span{
-    color: var(--strong-cyan);
-}
-
-header, .section-data-person button{
-    text-transform: uppercase;
 }
 
 footer{
@@ -194,8 +184,7 @@ footer a{
     }
 
     main{
-        width: 50vw;
-        display: flex;
+        width: 80%;
         margin: 0 auto;
         gap: 9rem;
         align-items: center;
