@@ -11,10 +11,13 @@ form.addEventListener("submit", event => {
     calcBill()
 })
 
-let messageError = document.createElement("span")
+let costTotalBill
+let resultTip
 
 function calcBill() {
-    let costTotalBill = moneyPerson.value / numPeoples.value
+    let messageError = document.createElement("span")
+    costTotalBill = moneyPerson.value / numPeoples.value
+
     if (numPeoples.value <= 0 && percentTipCustom.value <= 0) {
         messageError.innerHTML = "Can't be zero or less"
         document.querySelectorAll("legend")[2].appendChild(messageError)
@@ -22,12 +25,14 @@ function calcBill() {
     } else {
         messageError.innerHTML = ""
         dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
+        numPeoples.classList.remove("error")
         calcTip()
     }
+
     function calcTip() {
         percentTip.forEach(valueTip => {
             valueTip.addEventListener("click", () => {
-                let resultTip = costTotalBill * valueTip.value / 100
+                resultTip = costTotalBill * valueTip.value / 100
                 costTotalBill += resultTip
                 dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
                 dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
@@ -36,20 +41,20 @@ function calcBill() {
     }
 }
 
-function checkNumberTipCustom() {
-    let valueTipCustom = percentTip.value
-    console.log(valueTipCustom)
-
-    let ruleValue = /^[0-9]+$/
+function checkNumberTipCustom(valueTipCustom) {
+    let ruleValue = /^[1-9]+$/
     let messageError = document.createElement("p")
 
-    if (valueCustom.match(ruleValue)) {
+    if (valueTipCustom.match(ruleValue)) {
         messageError.innerHTML = ""
     } else {
         messageError.innerHTML = "Type only positive integer number!"
         messageError.classList.add("error")
         document.querySelector(".container-tips-percentage").appendChild(messageError)
     }
+
+    resultTip = moneyPerson.value * valueTipCustom / 100
+    costTotalBill += resultTip
 }
 
 function clearDataPerson() {
