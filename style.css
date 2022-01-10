@@ -19,7 +19,7 @@
     --white: hsl(0, 0%, 100%);
 }
 
-header,fieldset,input,.container-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
+header,fieldset,input,.container-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span,form button{
     font-weight: 700;
 }
 
@@ -60,10 +60,6 @@ fieldset,button,input{
     border: none;
 }
 
-fieldset input.error{
-    border: 2px solid #ff0000;
-}
-
 fieldset{
     color: var(--dark-grayish-cyan);
     font-size: 0.8rem;
@@ -72,8 +68,12 @@ fieldset{
 
 fieldset legend{
     display: flex;
-    gap: 1rem;
+    gap: 9rem;
     margin: 0.8rem 0;
+}
+
+fieldset input.error{
+    border: 2px solid #ff0000;
 }
 
 .container-tips-percentage p.error,footer{
@@ -107,6 +107,11 @@ input:not(#btn-custom){
     text-align: right;
 }
 
+input:not(#btn-custom)::placeholder{
+    opacity: 0.5;
+    color: var(--dark-grayish-cyan-brightness);
+}
+
 #btn-custom{
     text-align: center;
 }
@@ -119,17 +124,9 @@ input:focus{
     border: 2px solid var(--strong-cyan);
 }
 
-.container-tips-percentage input,.section-data-person button{
-    font-size: 1rem;
-}
-
-.container-tips-percentage button{
-    font-size: 1.2rem;
-    background-color: var(--very-dark-cyan);
-}
-
-.container-tips-percentage input:focus{
-    border: red !important;
+.section-enter-data-person form button{
+    width: 100%;
+    margin: 0 0 1rem;
 }
 
 .container-buttons-tips-percentage{
@@ -138,15 +135,19 @@ input:focus{
     gap: 0.7rem;
 }
 
-button{
-    padding: 5px 1rem;
+.container-tips-percentage input,.section-data-person button,form button{
+    font-size: 1.2rem;
+}
+
+.container-tips-percentage button{
+    font-size: 1.2rem;
+    background-color: var(--very-dark-cyan);
+    padding: 5px 10px;
     transition: all 0.5s;
 }
 
-button:hover{
-    cursor: pointer;
-    background-color: var(--strong-cyan);
-    color: var(--very-dark-cyan);
+.container-tips-percentage input:focus{
+    border: #ff0000 !important;
 }
 
 .section-data-person{
@@ -154,9 +155,21 @@ button:hover{
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--very-dark-cyan);
-    margin: 0 0 3rem;
+    margin: 1rem 0;
     padding: 2rem 1.5rem;
     border-radius: 15px;
+}
+
+.section-data-person button,form button{
+    padding: 5px 1rem;
+    transition: all 0.5s;
+    color: var(--very-dark-cyan);
+}
+
+.section-enter-data-person button:hover,.section-data-person button:hover,form button{
+    cursor: pointer;
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
 }
 
 button,.section-data-person h5{
@@ -167,10 +180,10 @@ button,.section-data-person h5{
     color: var(--strong-cyan);
 }
 
-.section-data-person button{
-    color: var(--very-dark-cyan);
-    background-color: var(--strong-cyan);
-}
+/* .section-data-person button:disabled{
+    opacity: 0.9;
+    cursor: not-allowed;
+} */
 
 .section-data-person .rows-data{
     display: flex;
@@ -197,16 +210,13 @@ input,.section-data-person span{
     }
 
     main{
+        width: 80%;
+        margin: 0 auto;
         position: initial;
         display: flex;
         padding: 0;
         box-shadow: 5px 10px 5px 5px var(--light-grayish-cyan);
         border-radius: 20px;
-    }
-
-    main{
-        width: 80%;
-        margin: 0 auto;
     }
     
     .container-buttons-tips-percentage{
@@ -217,7 +227,6 @@ input,.section-data-person span{
         width: 50%;
         margin: 2rem;
     }
-    
 
     .section-data-person span{
         font-size: 2rem;

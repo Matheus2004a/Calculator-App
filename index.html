@@ -20,7 +20,7 @@
     <section class="section-enter-data-person">
       <fieldset>
         <legend>Bill</legend>
-        <input type="number" id="value-bill" autofocus>
+        <input type="number" id="value-bill" placeholder="0.00" autofocus>
         <figure>
           <img src="./images/icon-dollar.svg" alt="icon-dollar">
         </figure>
@@ -34,18 +34,19 @@
           <button type="submit" value="15">15%</button>
           <button type="submit" value="25">25%</button>
           <button type="submit" value="50">50%</button>
-          <input type="number" id="btn-custom" placeholder="Custom" value="" onblur="checkNumberTipCustom(this.value)">
+          <input type="number" id="btn-custom" placeholder="Custom" value="">
         </div>
       </fieldset>
 
       <form>
         <fieldset>
           <legend>Number of People</legend>
-          <input type="number" id="numbers-peoples">
+          <input type="number" id="numbers-peoples" placeholder="0.00">
           <figure>
             <img src="./images/icon-person.svg" alt="icon-person">
           </figure>
         </fieldset>
+        <button type="submit">CALCULATE</button>
       </form>
     </section>
 
@@ -66,7 +67,7 @@
           <span>$0.00</span>
         </div>
       </div>
-      <button type="reset" class="btn-reset-data-person">RESET</button>
+      <button type="reset" class="btn-reset-data-person" disabled>RESET</button>
     </section>
   </main>
 

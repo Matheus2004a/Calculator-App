@@ -15,17 +15,15 @@ let messageError = document.createElement("span")
 
 function calcBill() {
     let costTotalBill = moneyPerson.value / numPeoples.value
-    if (numPeoples.value <= 0) {
+    if (numPeoples.value <= 0 && percentTipCustom.value <= 0) {
         messageError.innerHTML = "Can't be zero or less"
         document.querySelectorAll("legend")[2].appendChild(messageError)
         numPeoples.classList.add("error")
     } else {
         messageError.innerHTML = ""
         dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
-        numPeoples.classList.remove("error")
         calcTip()
     }
-
     function calcTip() {
         percentTip.forEach(valueTip => {
             valueTip.addEventListener("click", () => {
@@ -38,7 +36,10 @@ function calcBill() {
     }
 }
 
-function checkNumberTipCustom(valueCustom) {
+function checkNumberTipCustom() {
+    let valueTipCustom = percentTip.value
+    console.log(valueTipCustom)
+
     let ruleValue = /^[0-9]+$/
     let messageError = document.createElement("p")
 
