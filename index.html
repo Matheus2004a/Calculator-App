@@ -20,12 +20,12 @@
     <section class="section-enter-data-person">
       <fieldset>
         <legend>Bill</legend>
-        <input type="number" id="value-bill">
+        <input type="number" id="value-bill" autofocus>
         <figure>
           <img src="./images/icon-dollar.svg" alt="icon-dollar">
         </figure>
       </fieldset>
-  
+
       <fieldset class="container-tips-percentage">
         <legend>Select Tip %</legend>
         <div class="container-buttons-tips-percentage">
@@ -37,7 +37,7 @@
           <input type="number" id="btn-custom" placeholder="Custom" value="" onblur="checkNumberTipCustom(this.value)">
         </div>
       </fieldset>
-  
+
       <form>
         <fieldset>
           <legend>Number of People</legend>
@@ -50,19 +50,21 @@
     </section>
 
     <section class="section-data-person">
-      <div class="rows-data">
-        <div>
-          <h5>Tip Amount</h5>
-          <p>/ person</p>
+      <div class="container-rows-data">
+        <div class="rows-data">
+          <div>
+            <h5>Tip Amount</h5>
+            <p>/ person</p>
+          </div>
+          <span>$0.00</span>
         </div>
-        <span>$0.00</span>
-      </div>
-      <div class="rows-data">
-        <div>
-          <h5>Total</h5>
-          <p>/ person</p>
+        <div class="rows-data">
+          <div>
+            <h5>Total</h5>
+            <p>/ person</p>
+          </div>
+          <span>$0.00</span>
         </div>
-        <span>$0.00</span>
       </div>
       <button type="reset" class="btn-reset-data-person">RESET</button>
     </section>

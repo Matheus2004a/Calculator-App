@@ -19,10 +19,6 @@
     --white: hsl(0, 0%, 100%);
 }
 
-body{
-    background-color: var(--light-grayish-cyan);
-}
-
 header,fieldset,input,.container-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span{
     font-weight: 700;
 }
@@ -34,13 +30,16 @@ header,main{
 
 header{
     align-items: center;
-    height: 15vh;
+    height: 25vh;
+    background-color: var(--light-grayish-cyan);
 }
 
 main{
+    position: relative;
+    bottom: 1rem;
     padding: 0 2rem;
-    background-color: var(--white);
     border-radius: 20px 20px 0 0;
+    background-color: var(--white);
 }
 
 a{
@@ -73,8 +72,13 @@ fieldset{
 
 fieldset legend{
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
     margin: 0.8rem 0;
+}
+
+.container-tips-percentage p.error,footer{
+    margin: 1rem;
+    text-align: center;
 }
 
 .container-tips-percentage p.error,fieldset span{
@@ -88,14 +92,27 @@ input,button{
 
 input{
     width: 100%;
-    padding: 5px 5px 5px 2rem;
     background-color: var(--light-gray-h-cyan);
     color: var(--very-dark-cyan);
     border-radius: 5px;
 }
 
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 input:not(#btn-custom){
+    padding: 5px 5px 5px 2rem;
     text-align: right;
+}
+
+#btn-custom{
+    text-align: center;
+}
+
+#btn-custom::placeholder{
+    color: var(--dark-grayish-cyan);
 }
 
 input:focus{
@@ -123,7 +140,6 @@ input:focus{
 
 button{
     padding: 5px 1rem;
-    color: var(--white);
     transition: all 0.5s;
 }
 
@@ -134,15 +150,16 @@ button:hover{
 }
 
 .section-data-person{
-    display: grid;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--very-dark-cyan);
     margin: 0 0 3rem;
     padding: 2rem 1.5rem;
     border-radius: 15px;
 }
 
-.section-data-person h5{
+button,.section-data-person h5{
     color: var(--white);
 }
 
@@ -158,22 +175,18 @@ button:hover{
 .section-data-person .rows-data{
     display: flex;
     justify-content: space-between;
+    margin: 0 0 2rem;
 }
 
 .section-data-person .rows-data p{
     font-size: 0.8rem;
-    color: var(--dark-grayish-cyan-brightness);
 }
 
-input, .section-data-person span{
+input,.section-data-person span{
     font-size: 1.5rem;
 }
 
-footer{
-    text-align: center;
-}
-
-footer a{
+.section-data-person .rows-data p,footer a{
     color: var(--dark-grayish-cyan-brightness);
 }
 
@@ -184,20 +197,29 @@ footer a{
     }
 
     main{
+        position: initial;
+        display: flex;
+        padding: 0;
+        box-shadow: 5px 10px 5px 5px var(--light-grayish-cyan);
+        border-radius: 20px;
+    }
+
+    main{
         width: 80%;
         margin: 0 auto;
-        gap: 9rem;
-        align-items: center;
-        box-shadow: 2px 2px 4px 5px var(--light-grayish-cyan);
-        border-radius: 20px;
     }
     
     .container-buttons-tips-percentage{
-        grid-template-columns: repeat(3, 47%);
+        grid-template-columns: repeat(3, 30%);
     }
 
-    .section-data-person{
-        width: 40vw;
-        margin: 0;
+    .section-enter-data-person,.section-data-person{
+        width: 50%;
+        margin: 2rem;
+    }
+    
+
+    .section-data-person span{
+        font-size: 2rem;
     }
 }
