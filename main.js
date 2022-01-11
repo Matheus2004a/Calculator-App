@@ -28,7 +28,6 @@ function calcBill() {
         numPeoples.classList.remove("error")
         calcTip()
     }
-
     function calcTip() {
         percentTip.forEach(valueTip => {
             valueTip.addEventListener("click", () => {
@@ -54,7 +53,11 @@ function checkNumberTipCustom(valueTipCustom) {
     }
 
     resultTip = moneyPerson.value * valueTipCustom / 100
+    resultTip /= numPeoples.value
     costTotalBill += resultTip
+
+    dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
+    dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
 }
 
 function clearDataPerson() {
@@ -63,6 +66,7 @@ function clearDataPerson() {
     })
     moneyPerson.value = ""
     numPeoples.value = ""
+    percentTipCustom.value = ""
     moneyPerson.focus()
 }
 
