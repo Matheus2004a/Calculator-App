@@ -115,7 +115,9 @@ input:not(#btn-custom)::placeholder{
 }
 
 #btn-custom{
-    text-align: center;
+    text-align: right;
+    padding-right: 1rem;
+    caret-color: var(--light-cyan);
 }
 
 #btn-custom::placeholder{

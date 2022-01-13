@@ -1,6 +1,6 @@
 const moneyPerson = document.querySelector("#value-bill")
 const numPeoples = document.querySelector("#numbers-peoples")
-const percentTip = document.querySelectorAll(".container-tips-percentage button")
+const buttonsPercentTip = document.querySelectorAll(".container-tips-percentage button")
 const percentTipCustom = document.querySelector("#btn-custom")
 const resetValues = document.querySelector(".btn-reset-data-person")
 resetValues.addEventListener("click", clearDataPerson)
@@ -14,34 +14,41 @@ form.addEventListener("submit", event => {
 let costTotalBill
 let resultTip
 
-percentTip.forEach(valueTip => {
+buttonsPercentTip.forEach(valueTip => {
     valueTip.addEventListener("click", () => {
-        valueTip.classList.toggle("check-tip")
+        valueTip.classList.add("check-tip")
         resultTip = moneyPerson.value * valueTip.value / 100
-        console.log(resultTip)
     })
 })
 
 function calcBill() {
     let messageError = document.createElement("span")
-
+    
     if (numPeoples.value <= 0) {
         messageError.innerHTML = "Can't be zero or less"
         document.querySelectorAll("legend")[2].appendChild(messageError)
         numPeoples.classList.add("error")
+    }
+    else if (percentTipCustom.value != "") {
+        resultTip = moneyPerson.value * percentTipCustom.value / 100
+        checkNumberTipCustom(percentTipCustom.value)
+        showCalcBill()
     } else {
         messageError.innerHTML = ""
-        resultTip /= numPeoples.value
-        costTotalBill = moneyPerson.value / numPeoples.value
-        costTotalBill += resultTip
-        dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
-        dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
-        numPeoples.classList.remove("error")
+        showCalcBill()
     }
 }
 
+function showCalcBill() {
+    resultTip /= numPeoples.value
+    costTotalBill = moneyPerson.value / numPeoples.value
+    costTotalBill += resultTip
+    dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
+    dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
+    numPeoples.classList.remove("error")
+}
+
 function checkNumberTipCustom(valueTipCustom) {
-    console.log(valueTipCustom)
     let ruleValue = /^[0-9]+$/
     let messageError = document.createElement("p")
 
@@ -55,13 +62,7 @@ function checkNumberTipCustom(valueTipCustom) {
 }
 
 function clearDataPerson() {
-    dataPerson.forEach(element => {
-        element.innerHTML = "$0.00"
-    })
-    moneyPerson.value = ""
-    numPeoples.value = ""
-    percentTipCustom.value = ""
-    moneyPerson.focus()
+    document.location.reload()
 }
 
 const dataPerson = document.querySelectorAll(".rows-data span")
