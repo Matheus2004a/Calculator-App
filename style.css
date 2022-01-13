@@ -10,6 +10,7 @@
 :root{
     /* Color primary */
     --strong-cyan: hsl(172, 67%, 45%);
+    --light-cyan: hsl(172, 44%, 69%);
     /* Colors neutral */
     --very-dark-cyan: hsl(183, 100%, 15%);
     --dark-grayish-cyan: hsl(186, 14%, 43%);
@@ -17,6 +18,7 @@
     --light-grayish-cyan: hsl(185, 41%, 84%);
     --light-gray-h-cyan: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
+    --red: hsl(0, 100%, 50%);
 }
 
 header,fieldset,input,.container-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span,form button{
@@ -73,7 +75,7 @@ fieldset legend{
 }
 
 fieldset input.error{
-    border: 2px solid #ff0000;
+    border: 2px solid var(--red);
 }
 
 .container-tips-percentage p.error,footer{
@@ -82,7 +84,7 @@ fieldset input.error{
 }
 
 .container-tips-percentage p.error,fieldset span{
-    color: #ff0000;
+    color: var(--red);
 }
 
 input,button{
@@ -146,8 +148,15 @@ input:focus{
     transition: all 0.5s;
 }
 
+.container-tips-percentage button:focus{
+    background-color: var(--light-cyan);
+    color: var(--very-dark-cyan);
+    border: 2px solid var(--very-dark-cyan);
+    transition: all 0s;
+}
+
 .container-tips-percentage input:focus{
-    border: #ff0000 !important;
+    border: var(--red) !important;
 }
 
 .section-data-person{
@@ -164,12 +173,13 @@ input:focus{
     padding: 5px 1rem;
     transition: all 0.5s;
     color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
 }
 
-.section-enter-data-person button:hover,.section-data-person button:hover,form button{
+.section-enter-data-person button:hover,.section-data-person button:hover,form button:hover{
     cursor: pointer;
-    background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
+    background-color: var(--light-cyan);
 }
 
 button,.section-data-person h5{
@@ -195,7 +205,7 @@ button,.section-data-person h5{
     font-size: 0.8rem;
 }
 
-input,.section-data-person span{
+input,.section-data-person .rows-data span{
     font-size: 1.5rem;
 }
 
@@ -228,7 +238,7 @@ input,.section-data-person span{
         margin: 2rem;
     }
 
-    .section-data-person span{
+    .section-data-person .rows-data span{
         font-size: 2rem;
     }
 }
