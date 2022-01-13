@@ -5,6 +5,9 @@ const percentTipCustom = document.querySelector("#btn-custom")
 const resetValues = document.querySelector(".btn-reset-data-person")
 resetValues.addEventListener("click", clearDataPerson)
 
+resetValues.disabled = true
+resetValues.classList.add("disabled")
+
 const form = document.querySelector("form")
 form.addEventListener("submit", event => {
     event.preventDefault()
@@ -46,6 +49,8 @@ function showCalcBill() {
     dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
     dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
     numPeoples.classList.remove("error")
+    resetValues.classList.remove("disabled")
+    resetValues.disabled = false
 }
 
 function checkNumberTipCustom(valueTipCustom) {

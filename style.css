@@ -169,6 +169,11 @@ input:focus{
     border-radius: 15px;
 }
 
+.section-data-person button.disabled{
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
 .section-data-person button,form button{
     padding: 5px 1rem;
     transition: all 0.5s;
@@ -176,7 +181,7 @@ input:focus{
     background-color: var(--strong-cyan);
 }
 
-.section-enter-data-person button:hover,.section-data-person button:hover,form button:hover{
+.section-enter-data-person button:hover,.section-data-person button:not(button.disabled):hover,form button:hover{
     cursor: pointer;
     color: var(--very-dark-cyan);
     background-color: var(--light-cyan);
@@ -189,11 +194,6 @@ button,.section-data-person h5{
 .section-data-person :is(p,span){
     color: var(--strong-cyan);
 }
-
-/* .section-data-person button:disabled{
-    opacity: 0.9;
-    cursor: not-allowed;
-} */
 
 .section-data-person .rows-data{
     display: flex;
