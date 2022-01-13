@@ -14,34 +14,35 @@ form.addEventListener("submit", event => {
 let costTotalBill
 let resultTip
 
+percentTip.forEach(valueTip => {
+    valueTip.addEventListener("click", () => {
+        valueTip.classList.toggle("check-tip")
+        resultTip = moneyPerson.value * valueTip.value / 100
+        console.log(resultTip)
+    })
+})
+
 function calcBill() {
     let messageError = document.createElement("span")
-    costTotalBill = moneyPerson.value / numPeoples.value
 
-    if (numPeoples.value <= 0 && percentTipCustom.value <= 0) {
+    if (numPeoples.value <= 0) {
         messageError.innerHTML = "Can't be zero or less"
         document.querySelectorAll("legend")[2].appendChild(messageError)
         numPeoples.classList.add("error")
     } else {
         messageError.innerHTML = ""
+        resultTip /= numPeoples.value
+        costTotalBill = moneyPerson.value / numPeoples.value
+        costTotalBill += resultTip
+        dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
         dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
         numPeoples.classList.remove("error")
-        calcTip()
-    }
-    function calcTip() {
-        percentTip.forEach(valueTip => {
-            valueTip.addEventListener("click", () => {
-                resultTip = costTotalBill * valueTip.value / 100
-                costTotalBill += resultTip
-                dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
-                dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
-            })
-        })
     }
 }
 
 function checkNumberTipCustom(valueTipCustom) {
-    let ruleValue = /^[1-9]+$/
+    console.log(valueTipCustom)
+    let ruleValue = /^[0-9]+$/
     let messageError = document.createElement("p")
 
     if (valueTipCustom.match(ruleValue)) {
@@ -51,13 +52,6 @@ function checkNumberTipCustom(valueTipCustom) {
         messageError.classList.add("error")
         document.querySelector(".container-tips-percentage").appendChild(messageError)
     }
-
-    resultTip = moneyPerson.value * valueTipCustom / 100
-    resultTip /= numPeoples.value
-    costTotalBill += resultTip
-
-    dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
-    dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
 }
 
 function clearDataPerson() {

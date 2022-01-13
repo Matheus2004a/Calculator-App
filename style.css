@@ -70,7 +70,7 @@ fieldset{
 
 fieldset legend{
     display: flex;
-    gap: 9rem;
+    gap: 1rem;
     margin: 0.8rem 0;
 }
 
@@ -148,11 +148,9 @@ input:focus{
     transition: all 0.5s;
 }
 
-.container-tips-percentage button:focus{
-    background-color: var(--light-cyan);
+.container-tips-percentage button.check-tip{
+    background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
-    border: 2px solid var(--very-dark-cyan);
-    transition: all 0s;
 }
 
 .container-tips-percentage input:focus{
@@ -231,6 +229,10 @@ input,.section-data-person .rows-data span{
     
     .container-buttons-tips-percentage{
         grid-template-columns: repeat(3, 30%);
+    }
+
+    fieldset legend{
+        gap: 9rem;
     }
 
     .section-enter-data-person,.section-data-person{
