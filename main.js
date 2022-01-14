@@ -8,10 +8,8 @@ resetValues.addEventListener("click", clearDataPerson)
 resetValues.disabled = true
 resetValues.classList.add("disabled")
 
-const form = document.querySelector("form")
-form.addEventListener("submit", event => {
-    event.preventDefault()
-    calcBill()
+numPeoples.addEventListener("keyup", () => {
+    calculateBill()
 })
 
 let costTotalBill
@@ -24,9 +22,9 @@ buttonsPercentTip.forEach(valueTip => {
     })
 })
 
-function calcBill() {
-    let messageError = document.createElement("span")
-    
+let messageError = document.createElement("span")
+
+function calculateBill() {
     if (numPeoples.value <= 0) {
         messageError.innerHTML = "Can't be zero or less"
         document.querySelectorAll("legend")[2].appendChild(messageError)
@@ -35,20 +33,25 @@ function calcBill() {
     else if (percentTipCustom.value != "") {
         resultTip = moneyPerson.value * percentTipCustom.value / 100
         checkNumberTipCustom(percentTipCustom.value)
-        showCalcBill()
+        showCalculateBill()
     } else {
-        messageError.innerHTML = ""
-        showCalcBill()
+        showCalculateBill()
+        enabledButtonReset()
     }
 }
 
-function showCalcBill() {
+function showCalculateBill() {
     resultTip /= numPeoples.value
     costTotalBill = moneyPerson.value / numPeoples.value
     costTotalBill += resultTip
     dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
     dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
     numPeoples.classList.remove("error")
+    messageError.innerHTML = ""
+    enabledButtonReset()
+}
+
+function enabledButtonReset() {
     resetValues.classList.remove("disabled")
     resetValues.disabled = false
 }

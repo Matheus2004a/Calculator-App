@@ -21,6 +21,13 @@
     --red: hsl(0, 100%, 50%);
 }
 
+body{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
 header,fieldset,input,.container-tips-percentage button,.section-data-person .rows-data p,.section-data-person button,.section-data-person span,form button{
     font-weight: 700;
 }
@@ -219,8 +226,12 @@ input,.section-data-person .rows-data span{
         background-color: var(--light-grayish-cyan);
     }
 
+    header{
+        height: 20vh;
+    }
+
     main{
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         position: initial;
         display: flex;
@@ -232,11 +243,7 @@ input,.section-data-person .rows-data span{
     .container-buttons-tips-percentage{
         grid-template-columns: repeat(3, 30%);
     }
-
-    fieldset legend{
-        gap: 9rem;
-    }
-
+    
     .section-enter-data-person,.section-data-person{
         width: 50%;
         margin: 2rem;
