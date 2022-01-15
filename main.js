@@ -12,13 +12,13 @@ numPeoples.addEventListener("keyup", () => {
     calculateBill()
 })
 
-let costTotalBill
-let resultTip
+let costTotalBill = 0
+let resultTip = 0
 
 buttonsPercentTip.forEach(valueTip => {
     valueTip.addEventListener("click", () => {
         valueTip.classList.add("check-tip")
-        resultTip = moneyPerson.value * valueTip.value / 100
+        resultTip = +moneyPerson.value * +valueTip.value / 100
     })
 })
 
@@ -42,7 +42,7 @@ function calculateBill() {
 
 function showCalculateBill() {
     resultTip /= numPeoples.value
-    costTotalBill = moneyPerson.value / numPeoples.value
+    costTotalBill = +moneyPerson.value / +numPeoples.value
     costTotalBill += resultTip
     dataPerson[0].innerHTML = `$${resultTip.toFixed(2)}`
     dataPerson[1].innerHTML = `$${costTotalBill.toFixed(2)}`
